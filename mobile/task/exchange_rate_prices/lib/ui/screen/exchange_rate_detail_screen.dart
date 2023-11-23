@@ -20,7 +20,7 @@ class ExchangeRateDetailScreen extends StatefulWidget {
 }
 
 class _ExchangeRateDetailState extends State<ExchangeRateDetailScreen> {
-  late final exchangeRatesService = context.read<ExchangeRatesService>();
+  late final exchangeRatesService = context.read<ExchangeRateService>();
   late final DownloadExchangeRateBloc rateBloc = DownloadExchangeRateBloc(ratesService: exchangeRatesService);
 
   @override

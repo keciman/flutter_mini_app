@@ -22,7 +22,7 @@ class ExchangeRateListScreen extends StatefulWidget {
 
 class _ExchangeRateListState extends State<ExchangeRateListScreen> {
   static const int historyLength = 2;
-  late final exchangeRatesService = context.read<ExchangeRatesService>();
+  late final exchangeRatesService = context.read<ExchangeRateService>();
   late final DownloadExchangeRatesBloc ratesBloc = DownloadExchangeRatesBloc(ratesService: exchangeRatesService);
 
   @override

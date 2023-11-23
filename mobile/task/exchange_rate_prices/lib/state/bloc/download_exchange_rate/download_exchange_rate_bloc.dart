@@ -8,7 +8,7 @@ part 'download_exchange_rate_event.dart';
 part 'download_exchange_rate_state.dart';
 
 class DownloadExchangeRateBloc extends Bloc<DownloadExchangeRateEvent, DownloadExchangeRateState> {
-  final ExchangeRatesService ratesService;
+  final ExchangeRateService ratesService;
 
   DownloadExchangeRateBloc({required this.ratesService}) : super(DownloadExchangeRateInitial()) {
     on<FetchExchangeRate>(handleFetchExchangeRates);

@@ -4,10 +4,10 @@ import 'package:flutter/material.dart';
 import 'package:graphql/client.dart';
 
 // Idea 💡 the functions could be merged into one generic if there is more than 2 and the logic is still similar
-class ExchangeRatesService {
+class ExchangeRateService {
   final GraphQLClient client;
 
-  const ExchangeRatesService({required this.client});
+  const ExchangeRateService({required this.client});
 
 
   Future<NetworkResult<List<ExchangeRate>>> fetchExchangeRates({int? historyLength}) async {
@@ -32,11 +32,13 @@ class ExchangeRatesService {
     if (result.hasException) {
       final exceptionString = result.exception.toString();
       debugPrint(exceptionString);
+
       return NetworkResult(errorMessage: exceptionString);
     }
 
     List<dynamic> fetchedRates = result.data?['exchangeRates'] ?? [];
     final exchangeRates = fetchedRates.map((rateData) => ExchangeRate.fromJson(rateData)).toList();
+
     return NetworkResult<List<ExchangeRate>>(result: exchangeRates);
   }
 
@@ -65,6 +67,7 @@ class ExchangeRatesService {
     if (result.hasException) {
       final exceptionString = result.exception.toString();
       debugPrint(result.exception.toString());
+
       return NetworkResult(errorMessage: exceptionString);
     }
 

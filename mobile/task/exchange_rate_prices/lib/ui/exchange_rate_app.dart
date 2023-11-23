@@ -15,8 +15,8 @@ class ExchangeRateApp extends StatelessWidget {
     return Sizer(builder: (context, orientation, deviceType) {
       return MultiProvider(
         providers: [
-          Provider<ExchangeRatesService>(
-            create: (_) => ExchangeRatesService(client: graphQLClient),
+          Provider<ExchangeRateService>(
+            create: (_) => ExchangeRateService(client: graphQLClient),
           ),
         ],
         child: const MaterialApp(
