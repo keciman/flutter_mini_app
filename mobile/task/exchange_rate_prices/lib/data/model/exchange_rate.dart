@@ -13,7 +13,7 @@ class ExchangeRate {
     return ExchangeRate(
       code: json['code'] as String,
       description: json['description'] as String?,
-      rates: (json['rates'] as List<double>).map((e) => e).toList(),
+      rates: (json['rates'] as List<dynamic>).map((e) => e as double).toList(),
     );
   }
 }

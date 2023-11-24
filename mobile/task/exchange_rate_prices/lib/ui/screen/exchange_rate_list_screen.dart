@@ -56,7 +56,7 @@ class _ExchangeRateListState extends State<ExchangeRateListScreen> {
             bloc: ratesBloc,
             builder: (context, state) {
               if (state is DownloadExchangeRatesLoading) {
-                return const CustomLoader();
+                return Flexible(child: const CustomLoader());
               } else if (state is DownloadExchangeRatesLoaded) {
                 return Expanded(
                   child: ExchangeRateListview(exchangeRates: state.currencies),
